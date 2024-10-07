@@ -1,0 +1,103 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Gerador de corridas",
+        "description": "Documentacão da API do Gerador de corridas",
+        "version": "1.0"
+    },
+    "paths": {
+        "/api/rides/{id}/cancel": {
+            "patch": {
+                "tags": [
+                    "Rides (Corridas)"
+                ],
+                "summary": "Cancelar corrida",
+                "description": "Cancelar corrida existente",
+                "operationId": "cancel_ride",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID da corrida",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Corrida cancelada",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Corrida não encontrada",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/rides": {
+            "post": {
+                "tags": [
+                    "Rides (Corridas)"
+                ],
+                "summary": "Criar nova corrida",
+                "description": "Criar/Solicitar nova corrida",
+                "operationId": "create_ride",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "requester_user_id",
+                                    "from",
+                                    "to"
+                                ],
+                                "properties": {
+                                    "requester_user_id": {
+                                        "type": "integer"
+                                    },
+                                    "from": {
+                                        "type": "string",
+                                        "example": "Rua B, 456"
+                                    },
+                                    "to": {
+                                        "type": "string",
+                                        "example": "Rua C, 560"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Corrida criada",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "Rides (Corridas)",
+            "description": "Rides (Corridas)"
+        }
+    ]
+}
