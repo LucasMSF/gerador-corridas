@@ -16,11 +16,11 @@ Para executar o projeto, siga os seguintes passos:
 
 2. Faça o download das dependências do projeto. Esse projeto utiliza o Laravel Sail para gerenciar os containers e caso o projeto esteja recém-clonado você deverá executar o seguinte comando para instalar as dependências pela primeira vez
     ```
-       docker run --rm --interactive --tty -v $(pwd):/app composer install
+    docker run --rm --interactive --tty -v $(pwd):/app composer install
     ```
 3. Em seguida, você deve executar o comando:
     ```
-       ./vendor/bin/sail up -d 
+    ./vendor/bin/sail up -d 
     ```
    esse comando irá subir os containers da aplicação (servidor web, banco de dados, redis, etc)
    
@@ -28,16 +28,16 @@ Para executar o projeto, siga os seguintes passos:
 
 4. Agora você deve ajustar sua .env (faça uma cópia da .env.example, não necessário nenhuma alteração) e executar os seguintes comandos:
     ```
-        touch database/database.sqlite
+    touch database/database.sqlite
     ```
     ```
-        php artisan key:generate
+    php artisan key:generate
     ```
     ```
-        php artisan migrate
+    php artisan migrate
     ```
     ```
-        php artisan db:seed
+    php artisan db:seed
     ```
     Os comandos acima criam o arquivo do banco SQLite, gera a chave da aplicação, executa as migrações do banco de dados e semeia o banco com dados iniciais, respectivamente.
 
@@ -47,6 +47,7 @@ Para executar o projeto, siga os seguintes passos:
     php artisan l5-swagger:generate 
     ```
     Após executar o comando acima basta acessar a rota `/api/documentation`
+<b>OBS: após rodar o comando `php artisn db:seed` é gerado um usuário com ID = 1 para usar nos testes</b>
 2. O projeto também possui testes automatizados (unitários). Para executar os testes use o comando
     ```
     php artisan test
