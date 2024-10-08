@@ -39,7 +39,7 @@ Para executar o projeto, siga os seguintes passos:
     ```
         php artisan db:seed
     ```
-    Os comandos acima criam o arquivo do banco SQLite, gera a chave da aplicação, executa as migrações do banco de dados e semeia o banco com dados iniciais, Respectivamente.
+    Os comandos acima criam o arquivo do banco SQLite, gera a chave da aplicação, executa as migrações do banco de dados e semeia o banco com dados iniciais, respectivamente.
 
 ## 🔨 Testando a API 
  1. O projeto possui Swagger e Swagger UI para testar os enpoints. Para utiliza-los basta executar o comando:
@@ -60,8 +60,6 @@ A aplicação utiliza o framework Laravel com a bibliotedca Laravel Actions. Ess
 
 ![PHP](https://img.shields.io/badge/php-%23777BB4.svg?style=for-the-badge&logo=php&logoColor=white)
 ![Laravel](https://img.shields.io/badge/laravel-%23FF2D20.svg?style=for-the-badge&logo=laravel&logoColor=white)
-
-![MySQL](https://img.shields.io/badge/mysql-%2300f.svg?style=for-the-badge&logo=mysql&logoColor=white)
-![Redis](https://img.shields.io/badge/redis-%23DD0031.svg?style=for-the-badge&logo=redis&logoColor=white)
-
+![SQLite](https://img.shields.io/badge/SQLite-003B57?style=for-the-badge&logo=sqlite&logoColor=white)
+![Swagger](https://img.shields.io/badge/-Swagger-%23Clojure?style=for-the-badge&logo=swagger&logoColor=white)
 ![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)
