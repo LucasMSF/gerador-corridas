@@ -23,6 +23,7 @@ Para executar o projeto, siga os seguintes passos:
        ./vendor/bin/sail up -d 
     ```
    esse comando irá subir os containers da aplicação (servidor web, banco de dados, redis, etc)
+   
 <b>OBS: Ao utilizar o sail você deve executar os comandos php `php artisan ...` com `./vendor/bin/sail artisan ...`. caso queira executar os comandos php diretamente você deve entrar dentro do container com o comando `./vendor/bin/sail shell`</b>
 
 4. Agora você deve ajustar sua .env (faça uma cópia da .env.example, não necessário nenhuma alteração) e executar os seguintes comandos:
