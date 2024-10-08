@@ -14,7 +14,7 @@ class CreateRideTest extends TestCase
     use RefreshDatabase;
 
     /** @test */
-    public function it_creates_a_ride_correctly()
+    public function it_creates_a_ride()
     {
         // Criar um usuário fictício
         $requesterUser = User::factory()->create();
