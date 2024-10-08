@@ -4,11 +4,9 @@ namespace App\Actions;
 
 use App\Enums\RideStatus;
 use App\Models\Ride;
-use App\Models\User;
 use Illuminate\Http\JsonResponse;
-use Lorisleiva\Actions\ActionRequest;
 use Lorisleiva\Actions\Concerns\AsAction;
-use OpenApi\Attributes as OA;
+use OpenApi\Annotations as OA;
 
 class CancelRide
 {
@@ -24,29 +22,35 @@ class CancelRide
     }
 
 
-    #[OA\Patch(
-        path: "/api/rides/{id}/cancel",
-        operationId: "cancel_ride",
-        tags: ["Rides (Corridas)"],
-        summary: "Cancelar corrida",
-        description: "Cancelar corrida existente",
-        parameters: [
-            new OA\Parameter(
-                name: "id",
-                description: "ID da corrida",
-                required: true,
-                in: "path",
-                schema: new OA\Schema(
-                    type: "integer"
-                )
-            )
-        ],
-        responses: [
-            new OA\Response(response: "200", description: "Corrida cancelada", content: new OA\JsonContent()),
-            new OA\Response(response: "404", description: "Corrida não encontrada", content: new OA\JsonContent()),
-        ]
-    )]
-    public function asController($id): mixed
+    /**
+     * @OA\Patch(
+     *     path="/api/rides/{id}/cancel",
+     *     operationId="cancel_ride",
+     *     tags={"Rides (Corridas)"},
+     *     summary="Cancelar corrida",
+     *     description="Cancelar corrida existente",
+     *     @OA\Parameter(
+     *         name="id",
+     *         description="ID da corrida",
+     *         required=true,
+     *         in="path",
+     *         @OA\Schema(
+     *             type="integer"
+     *         )
+     *     ),
+     *     @OA\Response(
+     *         response="200",
+     *         description="Corrida cancelada",
+     *         @OA\JsonContent()
+     *     ),
+     *     @OA\Response(
+     *         response="404",
+     *         description="Corrida não encontrada",
+     *         @OA\JsonContent()
+     *     )
+     * )
+     */
+    public function asController($id): JsonResponse
     {
         $ride = Ride::findOrFail($id);
 
